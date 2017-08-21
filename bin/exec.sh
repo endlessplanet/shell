@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker exec --interactive --tty ${1} bash
+docker exec --interactive --tty $(cat shell.cid) bash

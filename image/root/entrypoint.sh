@@ -1,7 +1,8 @@
 #!/bin/sh
 
-echo "${ID_RSA}" > /home/user/.ssh/id_rsa &&
-    chmod 0600 /home/user/.ssh/id_rsa &&
+echo "${ID_RSA}" > ${HOME}/.ssh/id_rsa &&
+    echo "${KNOWN_HOSTS}" > ${HOME}/.ssh/known_hosts &&
+    chmod 0600 ${HOME}/.ssh/id_rsa ${HOME}/.ssh/known_hosts &&
     mkdir /workspace/${PROJECT_NAME} &&
     cd "/workspace/${PROJECT_NAME}" &&
     git init &&

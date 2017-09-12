@@ -15,5 +15,13 @@ dnf update --assumeyes &&
     chown --recursive user:user /home/user/bin &&
     mkdir /workspace &&
     chown user:user /workspace &&
+    cd /home/user &&
+    git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1 &&
+    chown --recursive user:user /home/user/.bash-git-prompt.sh &&
+    (cat > /home/user/.bashrc <<EOF
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
+EOF
+    ) &&
     dnf update --assumeyes &&
     dnf clean all

@@ -15,7 +15,7 @@ dnf update --assumeyes &&
     echo ALPHA 0600 &&
     ls -1 /opt/docker/bin | while read FILE
     do
-        cp /opt/docker/${FILE} /home/user/bin/${FILE%.*} &&
+        cp /opt/docker/bin/${FILE} /home/user/bin/${FILE%.*} &&
         echo ALPHA 0610 &&
             chmod 0500 /home/user/bin/${FILE%.*} &&
             echo ALPHA 0620

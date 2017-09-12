@@ -21,5 +21,5 @@ echo "${ID_RSA}" > ${HOME}/.ssh/id_rsa &&
         git remote add upstream "${UPSTREAM}" &&
             git remote set-url --push upstream no_push
     fi &&
-    cp /opt/docker/post-commit.sh .git/hooks/post-commit &&
+    ln --symbolic --force ${HOME}/bin/post-commit .git/hooks/post-commit &&
     sleep infinity

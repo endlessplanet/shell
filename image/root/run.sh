@@ -14,6 +14,9 @@ dnf update --assumeyes &&
     done &&
     chown --recursive user:user /home/user/bin &&
     cd /home/user &&
+    dnf install --assumeyes sudo &&
+    cp /opt/docker/user.sudo /etc/sudoers.d/user &&
+    chmod 0444 /etc/sudoers.d/user &&
     git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1 &&
     chown --recursive user:user /home/user/.bash-git-prompt &&
     (cat > /home/user/.bashrc <<EOF

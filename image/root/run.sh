@@ -13,7 +13,6 @@ dnf update --assumeyes &&
             chmod 0500 /home/user/bin/${FILE%.*}
     done &&
     chown --recursive user:user /home/user/bin &&
-    chown user:user /workspace &&
     cd /home/user &&
     git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1 &&
     chown --recursive user:user /home/user/.bash-git-prompt &&

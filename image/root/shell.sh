@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd /workspace/${PROJECT_NAME} &&
+cd /workspace/$(ls -1 /workspace) &&
     bash
